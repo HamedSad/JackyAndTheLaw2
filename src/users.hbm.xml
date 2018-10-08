@@ -1,0 +1,15 @@
+<?xml version="1.0"?> <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+
+	<class name="com.Jacky.model.Users" table="users">
+		<id name="IdUser" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="nomUser" column="NomUser" type="string" />
+		<property name="prenomUser" column="PrenomUser" type="string" />
+		<property name="mail" column="Mail" type="string" />
+		<property name="motDePasse" column="MotDePasse" type="string" />
+		<property name="entreprise" column="Entreprise" type="string" />
+		<property name="domaineProfessionel" column="DomaineProfessionnel" type="string" />
+     </class>
+</hibernate-mapping>

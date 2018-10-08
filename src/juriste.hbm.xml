@@ -1,0 +1,12 @@
+<?xml version="1.0"?> <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+
+	<class name="com.Jacky.model.Juriste" table="juriste">
+		<id name="idJuriste" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="nomJuriste" column="NomJuriste" type="string" />
+		<property name="prenomJuriste" column="PrenomJuriste" type="string" />
+		<property name="appreciation" column="Appreciation" type="int" />
+	</class>
+</hibernate-mapping>
