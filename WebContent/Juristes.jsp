@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet"
@@ -29,23 +31,23 @@
 	crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="">
-<title>Cahiers des charges</title>
 </head>
-
 <body>
 
-	<h1>CAHIERS DES CHARGES</h1>
+	<h1>JURISTES</h1>
 
-	<div class="CahiersDesCharges" style="width: 20rem">
-		<c:forEach items="${cahiers}" var="archivesDeCasConcrets">
+	<div class="Juriste" style="width: 20rem">
+		<c:forEach items="${juriste}" var="juriste">
 		<img class="card-img-top" src=".../100px180/" alt="Card image cap">
 		<div class="card-body">
-			<h5>Cahier des charges numero  <c:out value="${archivesDeCasConcrets.getIdArchives()}"/></h5>
-			<h5 class="card-title"><c:out value="${archivesDeCasConcrets.getSujetArchives()}" /></h5>
-			<p class="card-text"><c:out value="${archivesDeCasConcrets.getContenuArchives()}" /></p>
+			Juriste numero <c:out value="${juriste.getIdJuriste()}" />
+			<h5 class="card-title"><c:out value="${juriste.getNomJuriste()}" /> <c:out value="${juriste.getPrenomJuriste()}" /></h5>
+			<p class="card-text"></p>
+			<h5>Note : <c:out value="${juriste.getAppreciation()}"/> / 5</h5>
 			<a href="#" class="btn btn-primary">En savoir plus</a>
 		</div>
 		</c:forEach>
 	</div>
+
 </body>
 </html>
