@@ -29,45 +29,19 @@
 	crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="">
-<title>Cahiers des charges</title>
+<title>Cahier des charges</title>
 </head>
-
 <body>
 
-	<h1>CAHIERS DES CHARGES</h1>
-
-	<div class="CahiersDesCharges" style="width: 20rem">
-		<c:forEach items="${cahiers}" var="archivesDeCasConcrets">
-			<img class="card-img-top" src=".../100px180/" alt="Card image cap">
-			<div class="card-body">
-				<h5>
-					Cahier des charges numero
-
-					<c:out value="${archivesDeCasConcrets.getIdArchives()}" />
-				</h5>
-				<h5 class="card-title">
-					<c:out value="${archivesDeCasConcrets.getSujetArchives()}" />
-				</h5>
-				<p class="card-text">
-					<c:out value="${archivesDeCasConcrets.getContenuArchives()}" />
-				</p>
-
-
-				<form action="CahierUnitaireLet" method="post">
-					<input type="hidden" name="idCahier" value="${archivesDeCasConcrets.getIdArchives()}" />
-					<p>
-						<button type="submit" style="background-color: #ff5c39"
-							class="btn" value="">En savoir plus</button>
-					</p>
-					
-					
-				</form>
-
-				
-
-
-			</div>
-		</c:forEach>
+	<div class="titreCahier" name="sujetArchives">
+		<h1>${cahierUnitaire.getSujetArchives()}</h1>
 	</div>
+
+	<div class="titreCahier" name="contenuArchives">
+		<h1>${cahierUnitaire.getContenuArchives()}</h1>
+	</div>
+
+
+
 </body>
 </html>

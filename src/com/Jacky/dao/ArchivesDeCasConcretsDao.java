@@ -5,7 +5,8 @@ import com.Jacky.util.HibernateUtil;
 
 import java.util.ArrayList;
 import java.util.List;
- 
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
  
@@ -66,6 +67,24 @@ public class ArchivesDeCasConcretsDao {
         return cahier;
     }
     
+    public ArchivesDeCasConcrets getCahierById(int cahierid) {
+    	ArchivesDeCasConcrets cahier1 = null;
+        Transaction trns = null;
+                
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            trns = session.beginTransaction();
+            String queryString = "from ArchivesDeCasConcrets where id = :id";
+            Query query = session.createQuery(queryString);
+            query.setInteger("cahier1", cahierid);
+            cahier1 = (ArchivesDeCasConcrets) query.uniqueResult();
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+             session.close();
+        }
+        return cahier1;
+    }
     
 }
 
